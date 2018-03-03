@@ -12,6 +12,14 @@ a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+.body-bgc{
+  background-color: #222d32;
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+
 /*侧边栏样式*/
 .lt-aside{
   width: 180px;
