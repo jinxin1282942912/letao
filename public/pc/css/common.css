@@ -20,6 +20,10 @@ a, a:link, a:visited, a:hover, a:active {
   margin-top: 150px;
 }
 
+.mb-20{
+  margin-bottom: 20px;
+}
+
 /*侧边栏样式*/
 .lt-aside{
   width: 180px;
@@ -107,4 +111,10 @@ a, a:link, a:visited, a:hover, a:active {
 .lt-content .charts-2 {
   width: 45%;
   height: 400px;
+}
+
+.table.table-bordered th,
+.table.table-bordered  td {
+  text-align: center;
+  vertical-align: middle;
 }
