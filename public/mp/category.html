@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+  <title>乐淘分类页</title>
+</head>
+<body>
+<div class="lt-container">
+  <!--header-->
+  <div class="lt-header">
+    <a href="index.html" class="icon-l"><sapn class="fa fa-home"></sapn></a>
+    <h3>乐淘云购</h3>
+    <a href="index.html" class="icon-r"><sapn class="fa fa-search"></sapn></a>
+  </div>
+
+  <!--main-->
+  <div class="lt-main">
+    <div class="nav">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!--这里放置真实显示的DOM内容-->
+          
+          <ul class="category">
+            <li class="now"><a href="#">运动馆</a></li>
+          </ul>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!--这里放置真实显示的DOM内容-->
+           <ul class="cate-con">
+
+           </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--footer-->
+  <div class="lt-footer">
+    <ul>
+      <li>
+        <a href="javascript:history.go(-1)">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="categoty.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/html" id="tmp-cate">
+  {{ each rows v i}}
+  <li data-id="{{v.id}}" class="{{i==0?'now':''}}"><a href="javascript:;">{{v.categoryName}}</a></li>
+  {{ /each }}
+</script>
+<script type="text/html" id="tmp-cate-con">
+  {{if rows.length === 0}}
+  <p class="tips">该分类下没有更多的数据</p>
+  {{/if}}
+
+  {{each rows v i}}
+  <li>
+    <a href="#">
+      <img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" alt="">
+      <p>{{v.brandName}}</p>
+    </a>
+  </li>
+  {{/each}}
+
+</script>
+
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>
