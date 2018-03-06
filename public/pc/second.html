@@ -61,13 +61,27 @@
     </ol>
 
     <!--内容-->
-    <div class="lt-content"></div>
+    <div class="lt-content">
+      <button class="btn btn-default btn-add mb-20">添加分类</button>
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th width="10%">序号</th>
+          <th width="30%">一级分类名称</th>
+          <th width="30%">二级分类名称</th>
+          <th width="30%">二级分类LOGO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--挖个坑-->
+        </tbody>
+      </table>
 
-
+      <div class="text-right">
+        <ul id="pagenation"></ul>
+      </div>
+    </div>
   </div>
-
-
-
 </div>
 
 
@@ -92,12 +106,85 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div class="modal fade" id="secondModal" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      <form id="form">
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                  <span class="dropdown-text">请选择一级分类</span>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <!--再挖个坑-->
+                </ul>
+
+              </div>
+              <input type="hidden" name="categoryId">
+            </div>
+
+            <div class="form-group">
+              <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName">
+            </div>
+
+            <div class="form-group">
+              <div class="file-box mb-15">
+                <label for="fileupload" class="btn btn-default">上传图片</label>
+                <!--type:file  只有这样才能选择图片-->
+                <!--id: 方便获取这个input-->
+                <!--name: 服务器通过这个name属性才能获取到对应图片-->
+                <!--data-url: 服务器上传的地址-->
+                <input type="file" style="display: none" id="fileupload" class="btn btn-default" name="pic1" data-url="/category/addSecondCategoryPic">
+              </div>
+
+              <div class="form-group img-box">
+                <img src="images/none.png" width="100" height="100" alt="">
+                <input type="hidden" name="brandLogo">
+                <input type="hidden" name="hot" value="1">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary ">添加</button>
+          </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/html" id="tmp-tr">
+  {{ each rows v i}}
+      <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" width="50" height="50" alt=""></td>
+      </tr>
+  {{ /each }}
+</script>
+
+<script type="text/html" id="tmp-li">
+  {{each rows v i}}
+  <li data-id="{{v.id}}"><a href="javascript:;">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
 
 <script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/second.js"></script>
 </body>
 </html>

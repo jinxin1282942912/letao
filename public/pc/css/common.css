@@ -23,7 +23,9 @@ a, a:link, a:visited, a:hover, a:active {
 .mb-20{
   margin-bottom: 20px;
 }
-
+.mb-15{
+  margin-bottom: 15px;
+}
 /*侧边栏样式*/
 .lt-aside{
   width: 180px;
