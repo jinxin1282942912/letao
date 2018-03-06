@@ -31,10 +31,11 @@ a, a:link, a:visited, a:hover, a:active {
   width: 180px;
   height: 100%;
   background-color: #222d32;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition:all 1s;
+  z-index: 999;
 }
 
 .lt-aside.now{
@@ -100,8 +101,17 @@ a, a:link, a:visited, a:hover, a:active {
   height: 50px;
   background-color: #3c8dbc;
   line-height:50px;
-  padding: 0 20px;
+  padding: 0 20px 0 200px;
   margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+}
+
+.lt-main .header.now {
+  padding-left: 20px;
 }
 
 .lt-main .header a{

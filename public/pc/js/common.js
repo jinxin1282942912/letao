@@ -27,11 +27,13 @@ $(function () {
   $('.icon-menu').on('click',function () {
     $('.lt-aside').toggleClass('now');
     $('.lt-main').toggleClass('now');
+    $(".header").toggleClass("now");
   })
 
 //  退出功能
   $('.icon-logout').on('click',function () {
     $("#logoutModal").modal("show");
+
   })
 
   $('.btn-logout').on('click',function () {
